@@ -1,0 +1,20 @@
+public bool Incluye(IComparable elem) {
+            
+            if (elem.CompareTo(this.dato) == 0)
+            {
+				return true;
+            }
+			// si elem es mayor que el dato almacenado en la raiz, voy al hijo derecho
+			if (elem.CompareTo(this.dato) > 0)
+			{
+				if (this.hijoDerecho != null)
+					return this.hijoDerecho.Incluye(elem);
+			}
+			// si elem es menor que el dato almacenado en la raiz, voy al hijo izquierdo
+			else if (elem.CompareTo(this.dato) < 0)
+			{
+				if (this.hijoIzquierdo != null)
+					return this.hijoIzquierdo.Incluye(elem);
+			}
+			return false;
+		}
